@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-    const msg = "Hello vue app  text and Picture Module";
+    //const msg = "Hello vue app  text and Picture Module";
 
 </script>
 
