@@ -1,4 +1,5 @@
 <script setup lang="ts">
+    import TextBlock from './TextBlock.vue'
     // Accept individual props (not wrapped in a `data` object)
     defineProps<{
         headline: string;
@@ -11,9 +12,10 @@
 <template>
     <div class="text-module">
         <div class="text-wrapper">
-            <h2>{{ headline }}</h2>
-            <h3>{{ subline }}</h3>
-            <p>{{ intro }}</p>
+            <!-- Use the partial for the static text block -->
+            <TextBlock :headline="headline" :subline="subline" :intro="intro" />
+
+            <!-- Render remaining paragraphs -->
             <div v-for="(para, i) in text" :key="i">
                 <p>{{ para }}</p>
             </div>
@@ -31,10 +33,8 @@
 
     {
         max-width: @text-max-width;
-        
-        
-        h2, h3, p
-    {
+     
+        h2, h3, p {
         color: @text-color;
     }
 

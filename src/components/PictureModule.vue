@@ -1,4 +1,5 @@
 <script setup lang="ts">
+    import TextBlock from './TextBlock.vue'
     // Accept flat props directly from the parent component
     defineProps<{
         picture: string;
@@ -12,11 +13,8 @@
 <template>
     <div class="picture-module">
         <img :src="picture" :alt="alt" />
-        <div class="text-content">
-            <h2>{{ headline }}</h2>
-            <h3>{{ subline }}</h3>
-            <p>{{ intro }}</p>
-        </div>
+        <!-- Replace static content with TextBlock partial -->
+        <TextBlock :headline="headline" :subline="subline" :intro="intro" />
     </div>
 </template>
 
@@ -24,21 +22,21 @@
     .picture-module {
         .flex-column-center();
         padding: @padding-md;
-        
-    img
+        img
+
     {
         .responsive-img();
         max-width: @img-max-width;
         margin-bottom: 1rem;
     }
 
-    .text-content {
+    .text-block {
         text-align: center;
-        
         h2, h3, p
-        {
+
+    {
         color: @text-color;
-        }
+    }
 
     }
     }
@@ -47,20 +45,16 @@
         .picture-module {
             .flex-row-center();
             text-align: left;
+            img
 
-        img{
+    {
+        margin-bottom: 0;
+    }
 
-          margin-bottom: 0;
-
-        }
-
-    .text-content {
+    .text-block {
         max-width: @text-max-width-desktop;
     }
 
     }
-  }
+    }
 </style>
-
-
-
