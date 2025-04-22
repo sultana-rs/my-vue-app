@@ -1,6 +1,7 @@
 [
     {
-        "type": "text",
+        "type": "TextModule",
+        "uuid": "1",
         "headline": "Welcome To Website",
         "subline": "Glad you're here",
         "intro": "This is a short intro",
@@ -10,8 +11,9 @@
         ]
     },
     {
-        "type": "picture",
-        "picture": "img1.jpg",
+        "type": "PictureModule",
+        "uuid": "2",
+        "picture": "/img1.jpg",
         "alt": "An example image",
         "headline": "Creating, editing, and presenting digital content and designs is your passion",
         "subline": "Image Subtitle",

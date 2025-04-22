@@ -1,22 +1,29 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
-import TextModule from './TextModule.vue';
-import PictureModule from './PictureModule.vue';
-import type { TextModule as TText, PictureModule as TPicture } from '../types';
+    import { ref, onMounted, defineAsyncComponent } from 'vue'
+    import type { TextModule as TText, PictureModule as TPicture } from '../types'
 
-const modules = ref<(TText | TPicture)[]>([]);
+    import TextModule from './TextModule.vue'
+    import PictureModule from './PictureModule.vue'
 
-onMounted(async () => {
-  const response = await fetch('/src/data/modules.json');
-  modules.value = await response.json();
-});
+    const modules = ref<(TText | TPicture)[]>([])
+
+    // Component map for dynamic usage
+    const componentMap = {
+        TextModule,
+        PictureModule,
+    }
+
+    onMounted(async () => {
+        const response = await fetch('/src/data/modules.json')
+        modules.value = await response.json()
+    })
 </script>
 
 <template>
     <div>
-        <div v-for="(mod, index) in modules" :key="index">
-            <TextModule v-if="mod.type === 'text'" :data="mod" />
-            <PictureModule v-else-if="mod.type === 'picture'" :data="mod" />
+        <div v-for="(mod, index) in modules" :key="mod.uuid || index">
+            <component :is="componentMap[mod.type]"
+                       v-bind="mod" />
         </div>
     </div>
 </template>

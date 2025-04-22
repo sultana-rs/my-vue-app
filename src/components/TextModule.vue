@@ -1,30 +1,45 @@
 <script setup lang="ts">
-    defineProps<{ data: import('../types').TextModule }>();
+    // Accept individual props (not wrapped in a `data` object)
+    defineProps<{
+        headline: string;
+        subline: string;
+        intro: string;
+        text: string[];
+    }>();
 </script>
 
 <template>
-    <div class="grid-container">
-        <div class="text-column">
-            <h2>{{ data.headline }}</h2>
-            <h3>{{ data.subline }}</h3>
-            <p>{{ data.intro }}</p>
-            <div v-for="(para, i) in data.text" :key="i">
+    <div class="text-module">
+        <div class="text-wrapper">
+            <h2>{{ headline }}</h2>
+            <h3>{{ subline }}</h3>
+            <p>{{ intro }}</p>
+            <div v-for="(para, i) in text" :key="i">
                 <p>{{ para }}</p>
             </div>
         </div>
     </div>
 </template>
 
-<style lang="less" scoped>
-    .grid-container {
-        display: grid;
-        place-items: center;
+<style scoped lang="less">
+    .text-module {
+        .grid-center();
         min-height: 30vh;
-        padding: 5rem 1rem;
+        padding: @padding-lg;
         text-align: center;
+        .text-wrapper
+
+    {
+        max-width: @text-max-width;
+        
+        
+        h2, h3, p
+    {
+        color: @text-color;
     }
 
-    .text-column {
-        max-width: 600px;
+    }
     }
 </style>
+
+
