@@ -1,5 +1,4 @@
 <script setup lang="ts">
-    import TextBlock from './TextBlock.vue'
     // Accept flat props directly from the parent component
     defineProps<{
         picture: string;

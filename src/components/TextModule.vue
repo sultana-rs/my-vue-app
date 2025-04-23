@@ -1,6 +1,7 @@
 <script setup lang="ts">
-    import TextBlock from './TextBlock.vue'
+
     // Accept individual props (not wrapped in a `data` object)
+    // Only props here – no component import
     defineProps<{
         headline: string;
         subline: string;
