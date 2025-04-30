@@ -1,0 +1,102 @@
+[
+    {
+        "type": "TextModule",
+        "uuid": "1",
+        "textBlock": {
+            "headline": "Welcome To Website",
+            "subline": "Glad you're here",
+            "intro": "This is a short intro"
+        },
+        "text": [
+            "With STUDIO, your customer satisfaction is assured, and your price/performance ratio finally finds balance. This leads to referrals and many more new customers who support you in scaling or give you the freedom to only take on projects you enjoy.",
+            "With STUDIO, your customer satisfaction is assured, and your price/performance ratio finally finds balance. This leads to referrals and many more new customers who support you in scaling or give you the freedom to only take on projects you enjoy."
+        ]
+    },
+    {
+        "type": "PictureModule",
+        "uuid": "2",
+        "image": {
+            "src": "/img1.jpg",
+            "alt": "An example image"
+        },
+        "textBlock": {
+            "headline": "Creating, editing, and presenting digital content and designs is your passion",
+            "subline": "Image Subtitle",
+            "intro": "The ever-increasing competition in the agency market won't affect you. Many companies out there face the same challenges as you, and can usually only solve them with more staff or money. However, what everyone needs are more efficient processes, and with STUDIO, you'll definitely have those."
+        }
+    },
+    {
+        "type": "GalleryModule",
+        "uuid": "7",
+        "images": [
+            {
+                "src": "/Pic1.jpg",
+                "alt": "Gallery Image 1"
+            },
+            {
+                "src": "/Pic2.jpg",
+                "alt": "Gallery Image 2"
+            },
+            {
+                "src": "/Pic3.jpg",
+                "alt": "Gallery Image 3"
+            },
+            {
+                "src": "/Pic4.jpg",
+                "alt": "Gallery Image 4"
+            },
+            {
+                "src": "/Pic5.jpg",
+                "alt": "Gallery Image 5"
+            },
+            {
+                "src": "/Pic6.jpg",
+                "alt": "Gallery Image 6"
+            },
+            {
+                "src": "/Pic7.jpg",
+                "alt": "Gallery Image 7"
+            }
+        ]
+    },
+
+        {
+            "type": "NewGalleryModule",
+            "uuid": "12345",
+            "images": [
+                {
+                    "src": "/Pic10.jpg",
+                    "alt": "First Image"
+                },
+                {
+                    "src": "/Pic11.jpg",
+                    "alt": "Second Image"
+                },
+                {
+                    "src": "/Pic12.jpg",
+                    "alt": "Third Image"
+                },
+                {
+                    "src": "/Pic9.jpg",
+                    "alt": "Third Image"
+                },
+                {
+                    "src": "/Pic8.jpg",
+                    "alt": "Third Image"
+                },
+                {
+                    "src": "/Pic7.jpg",
+                    "alt": "Third Image"
+                },
+                {
+                    "src": "/Pic6.jpg",
+                    "alt": "Third Image"
+                }
+
+
+            ]
+        }
+    
+
+]
+

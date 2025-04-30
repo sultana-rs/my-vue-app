@@ -1,9 +1,10 @@
 <script setup lang="ts">
     import { computed, onMounted } from 'vue'
-    import { useModuleStore } from '../stores/moduleStore'
+    import { useModuleStore } from '@/stores/moduleStore'
+    import type { ModuleType } from '@/types'
 
     const store = useModuleStore()
-    const modules = computed(() => store.modules)
+    const modules = computed<ModuleType[]>(() => store.modules)
 
     onMounted(() => {
         store.loadModules()
@@ -13,9 +14,10 @@
 <template>
     <div>
         <div v-for="(mod, index) in modules" :key="mod.uuid || index">
-            <!-- Using globally registered component directly by its name -->
-            <component :is="mod.type" v-bind="mod" />
+            <component v-if="mod?.type && typeof mod.type === 'string'"
+                       :is="mod.type"
+                       :key="mod.uuid || index"
+                       v-bind="mod" />
         </div>
     </div>
 </template>
-

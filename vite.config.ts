@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+﻿import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 
@@ -15,8 +15,13 @@ export default defineConfig({
                 additionalData: `
           @import "@/styles/variables.less";
           @import "@/styles/mixins.less";
-        `
-            }
-        }
-    }
+        `,
+            },
+        },
+    },
+    server: {
+        port: 5173,
+        strictPort: true, // ❗ Prevents switching to other ports
+        open: true        // ✅ Auto-opens browser
+    },
 })

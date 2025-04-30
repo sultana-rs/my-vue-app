@@ -1,19 +1,52 @@
-// Reusable base interface for text blocks
+﻿// ✅ Reusable base interface for text blocks
 export interface TextBlockContent {
     headline: string;
     subline: string;
     intro: string;
 }
 
-// TextModule uses the base + its own fields
-export interface TextModule extends TextBlockContent {
-    type: 'text';
+// ✅ Reusable interface for images
+export interface ImageContent {
+    src: string;
+    alt: string;
+}
+
+// ✅ TextModule: uses a nested textBlock + custom fields
+export interface TextModule {
+    type: 'TextModule';
+    uuid: string;
+    textBlock: TextBlockContent;
     text: string[];
 }
 
-// PictureModule also uses the same base
-export interface PictureModule extends TextBlockContent {
-    type: 'picture';
-    picture: string;
-    alt: string;
+// ✅ PictureModule: uses nested textBlock + image
+export interface PictureModule {
+    type: 'PictureModule';
+    uuid: string;
+    textBlock: TextBlockContent;
+    image: ImageContent;
 }
+
+export interface GalleryImage {
+    src: string;
+    alt?: string;
+}
+
+export interface GalleryModule {
+    type: 'GalleryModule';
+    uuid: string;
+    images: GalleryImage[];
+}
+
+
+export interface NewGalleryModule {
+    type: 'NewGalleryModule';
+    uuid: string;
+    images: {
+        src: string;
+        alt?: string;
+    }[];
+}
+
+// ✅ Union type (optional, for typing arrays)
+export type ModuleType = TextModule | PictureModule | GalleryModule | NewGalleryModule;

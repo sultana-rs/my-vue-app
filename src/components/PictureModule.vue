@@ -1,19 +1,33 @@
-<script setup lang="ts">
-    // Accept flat props directly from the parent component
+﻿<script setup lang="ts">
+    import { useWindowEvents } from '@/composables/useWindowEvents'
+    import { watch } from 'vue'
+
     defineProps<{
-        picture: string;
-        alt: string;
-        headline: string;
-        subline: string;
-        intro: string;
-    }>();
+        image: {
+            src: string
+            alt: string
+        },
+        textBlock: {
+            headline: string
+            subline: string
+            intro: string
+        }
+    }>()
+
+    const { scrollY, windowWidth, windowHeight, resized } = useWindowEvents()
+    watch(() => resized.value, () => console.log(5));
 </script>
 
 <template>
     <div class="picture-module">
-        <img :src="picture" :alt="alt" />
-        <!-- Replace static content with TextBlock partial -->
-        <TextBlock :headline="headline" :subline="subline" :intro="intro" />
+        <img :src="image.src" :alt="image.alt" />
+        <TextBlock :data="textBlock" />
+
+        <!-- Optional debug display (remove in production) -->
+        <div class="debug-info">
+            <p>🖼️ Window: {{ windowWidth }} x {{ windowHeight }}</p>
+            <p>📌 Scroll Y: {{ scrollY }}</p>
+        </div>
     </div>
 </template>
 
@@ -21,10 +35,13 @@
     .picture-module {
         .flex-column-center();
         padding: @padding-md;
-        img
 
+    
+    img
     {
         .responsive-img();
+        width: 800px;
+        height: 400px;
         max-width: @img-max-width;
         margin-bottom: 1rem;
     }
@@ -38,6 +55,13 @@
     }
 
     }
+
+    .debug-info {
+        font-size: 0.85rem;
+        color: #888;
+        margin-top: 1rem;
+    }
+
     }
 
     @media (min-width: 768px) {
@@ -47,7 +71,7 @@
             img
 
     {
-        margin-bottom: 0;
+        margin-bottom: 10rem;
     }
 
     .text-block {
@@ -57,3 +81,4 @@
     }
     }
 </style>
+

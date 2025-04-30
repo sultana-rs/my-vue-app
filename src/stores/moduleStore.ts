@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia'
+﻿import { defineStore } from 'pinia'
 import type { TextModule, PictureModule } from '../types'
 
 type ModuleType = TextModule | PictureModule
@@ -10,8 +10,12 @@ export const useModuleStore = defineStore('moduleStore', {
 
     actions: {
         async loadModules() {
-            const response = await fetch('/src/data/modules.json')
-            this.modules = await response.json()
+            try {
+                const response = await fetch('/data/modules.json') // ✅ Correct path
+                this.modules = await response.json()
+            } catch (error) {
+                console.error('Failed to load modules.json:', error)
+            }
         },
     },
 })
