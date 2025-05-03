@@ -48,5 +48,19 @@ export interface NewGalleryModule {
     }[];
 }
 
+export interface PictureTextModule {
+    type: 'PictureTextModule'
+    uuid: string
+    image: string
+    // add textBlock or text if needed
+}
+export interface MarqueeModule {
+    type: 'MarqueeModule';
+    uuid: string;
+    image: string;
+    tagline: string;
+    headline: string;
+}
+
 // ✅ Union type (optional, for typing arrays)
-export type ModuleType = TextModule | PictureModule | GalleryModule | NewGalleryModule;
+export type ModuleType = TextModule | PictureModule | GalleryModule | NewGalleryModule | PictureTextModule | MarqueeModule;

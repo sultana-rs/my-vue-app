@@ -60,43 +60,58 @@
         ]
     },
 
-        {
-            "type": "NewGalleryModule",
-            "uuid": "12345",
-            "images": [
-                {
-                    "src": "/Pic10.jpg",
-                    "alt": "First Image"
-                },
-                {
-                    "src": "/Pic11.jpg",
-                    "alt": "Second Image"
-                },
-                {
-                    "src": "/Pic12.jpg",
-                    "alt": "Third Image"
-                },
-                {
-                    "src": "/Pic9.jpg",
-                    "alt": "Third Image"
-                },
-                {
-                    "src": "/Pic8.jpg",
-                    "alt": "Third Image"
-                },
-                {
-                    "src": "/Pic7.jpg",
-                    "alt": "Third Image"
-                },
-                {
-                    "src": "/Pic6.jpg",
-                    "alt": "Third Image"
-                }
+    {
+        "type": "NewGalleryModule",
+        "uuid": "12345",
+        "images": [
+            {
+                "src": "/Pic10.jpg",
+                "alt": "First Image"
+            },
+            {
+                "src": "/Pic11.jpg",
+                "alt": "Second Image"
+            },
+            {
+                "src": "/Pic12.jpg",
+                "alt": "Third Image"
+            },
+            {
+                "src": "/Pic9.jpg",
+                "alt": "Third Image"
+            },
+            {
+                "src": "/Pic8.jpg",
+                "alt": "Third Image"
+            },
+            {
+                "src": "/Pic7.jpg",
+                "alt": "Third Image"
+            },
+            {
+                "src": "/Pic6.jpg",
+                "alt": "Third Image"
+            }
 
 
-            ]
-        }
-    
+        ]
+    },
+
+    {
+        "type": "PictureTextModule",
+        "uuid": "99",
+        "image": "/Emotion1.jpg",
+        "headline": "FIT. FOCUSED. CONFIDENT.",
+        "intro": "Transform your life with Max’s expert personal training. Offering customized fitness plans and nutrition advice. Achieve your goals with personalized support tailored just for you."
+    },
+
+    {
+        "type": "MarqueeModule",
+        "uuid": "marquee-1",
+        "image": "/Lemon.jpg",
+        "tagline": "Freshbite",
+        "headline": "A Taste of Nature, Delivered."
+    }
 
 ]
 

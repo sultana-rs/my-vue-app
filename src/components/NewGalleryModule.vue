@@ -52,6 +52,8 @@
         images: GalleryImage[]
     }>()
 
+    /* Reactive State */
+
     const images = props.images
     const currentIndex = ref(0)
     const isFullscreen = ref(false)
